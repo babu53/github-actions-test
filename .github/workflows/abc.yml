@@ -1,7 +1,9 @@
 name: Test Workflow
 
 on:
-  workflow_dispatch
+  workflow_dispatch:
+   branches:
+     - master
 
 env:
   NAME: MyWorkflow
@@ -16,7 +18,7 @@ jobs:
       - name: Print Name
         run: |
           echo "Workflow name is ${{ env.NAME }}"
-          echo "Runner name is $RUNNER_NAME"
+          
       - name: print present working directroy
         run: |
           echo "print working directory $GITHUB_WORKSPACE"
@@ -24,6 +26,7 @@ jobs:
       - name: execute shell script
         run: |
           echo "print working directory $GITHUB_WORKSPACE"
+          echo "Runner name is $RUNNER_NAME"
           sh abc.sh
           ls
         working-directory: test
