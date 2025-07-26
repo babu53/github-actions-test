@@ -24,6 +24,6 @@ jobs:
         working-directory: test
         run: |
           echo "print working directory $GITHUB_WORKSPACE"
-          # sh abc.sh
-          # ls
+          sh abc.sh
+          ls
           
