@@ -15,6 +15,5 @@ jobs:
           dir
       - name: print present working directroy
         run: |
-          pwd
-          echo "print working directory {{ github_WORKSPACE}}"
+          echo "print working directory {{ GITHUB_WORKSPACE}}"
          
