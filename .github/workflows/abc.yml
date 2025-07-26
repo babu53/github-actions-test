@@ -33,8 +33,8 @@ jobs:
           ls
           #mkdir demo
       - name: Create a folder using PowerShell
-        source = "${GITHUB_WORKSPACE}\demotest"
         shell: powershell
+        source = "${GITHUB_WORKSPACE}\demotest"
         run: New-Item -ItemType Directory -Path $source
       
           
