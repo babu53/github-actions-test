@@ -31,5 +31,9 @@ jobs:
       - name: print list of files
         run: |
           ls
-          mkdir demo 
+          #mkdir demo
+      - name: Create a folder using PowerShell
+        shell: powershell
+        run: New-Item -ItemType Directory -Path "{{ GITHUB_WORKSPACE}}\demo\one"
+      
           
