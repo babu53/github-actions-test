@@ -1,9 +1,7 @@
 name: Test Workflow
 
 on:
-  workflow_dispatch:
-   branches:
-     - master
+  workflow_dispatch
 
 env:
   NAME: MyWorkflow
