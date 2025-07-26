@@ -7,7 +7,7 @@ env:
 
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: test
     steps:
       - name: Print Name
         run: echo "Workflow name is ${{ env.NAME }}"
