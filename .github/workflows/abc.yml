@@ -22,7 +22,8 @@ jobs:
           ls
       - name: execute shell script
         run: |
+          working-directory: test
           echo "print working directory $GITHUB_WORKSPACE"
           # sh abc.sh
           # ls
-          working-directory: test
+          
