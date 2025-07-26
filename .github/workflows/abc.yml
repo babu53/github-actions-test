@@ -1,0 +1,13 @@
+name: Test Workflow
+
+on: push
+
+env:
+  NAME: MyWorkflow
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Name
+        run: echo "Workflow name is ${{ env.NAME }}"
