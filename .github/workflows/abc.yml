@@ -26,4 +26,7 @@ jobs:
           sh abc.sh
           ls
         working-directory: test
+      - name: print list of files
+        run: |
+          ls 
           
