@@ -1,6 +1,7 @@
 name: Test Workflow
 
-on: push
+on:
+  workflow_dispatch
 
 env:
   NAME: MyWorkflow
