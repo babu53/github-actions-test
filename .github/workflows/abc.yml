@@ -7,12 +7,12 @@ env:
 
 jobs:
   build:
-    runs-on: test
+    runs-on: ubuntu-latest
     steps:
       - name: Print Name
         run: |
           echo "Workflow name is ${{ env.NAME }}"
-          dir
+          ls
       - name: print present working directroy
         run: |
           echo "print working directory $GITHUB_WORKSPACE"
