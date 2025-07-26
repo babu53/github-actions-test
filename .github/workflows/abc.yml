@@ -10,4 +10,8 @@ jobs:
     runs-on: test
     steps:
       - name: Print Name
-        run: echo "Workflow name is ${{ env.NAME }}"
+        run: |
+          echo "Workflow name is ${{ env.NAME }}"
+          dir
+      - name: print present working directroy
+        run: pwd
