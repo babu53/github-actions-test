@@ -12,8 +12,9 @@ jobs:
       - name: Print Name
         run: |
           echo "Workflow name is ${{ env.NAME }}"
-          ls
+  
       - name: print present working directroy
         run: |
           echo "print working directory $GITHUB_WORKSPACE"
+          ls
          
