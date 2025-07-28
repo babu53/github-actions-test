@@ -60,5 +60,13 @@ jobs:
         run: |
           ls 
           echo this is testing
+      - name: copy recursively
+        run: |
+          cd "$GITHUB_WORKSPACE/demo/one/two"
+          
 
-           
+          DEST="$GITHUB_WORKSPACE/output"
+
+          mkdir -p "$DEST"
+
+          find three/four -type f -name "*.txt" -exec cp --parents {} "$DEST" \;
