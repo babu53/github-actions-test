@@ -32,9 +32,7 @@ jobs:
         run: |
           ls
           #mkdir demo
-
-        
-        run: New-Item -ItemType Directory -Path "demo/one/two/three/four"
+          
       - name: copy files to relative Path
         shell: powershell
         run: |
