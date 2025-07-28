@@ -56,7 +56,7 @@ jobs:
 
       #      }
       - name: print ls 
-        shell: bash
+        #shell: bash
         run: |
           ls 
           echo this is testing
