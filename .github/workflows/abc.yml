@@ -37,6 +37,7 @@ jobs:
         
       #   run: New-Item -ItemType Directory -Path "demo/one/two/three/four"
       - name: copy files to relative Path
+        name: powershell
         run: |
 
            $sourceFile = "$env:GITHUB_WORKSPACE\demo\one\two\three\four\file.txt"
