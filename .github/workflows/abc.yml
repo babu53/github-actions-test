@@ -36,24 +36,29 @@ jobs:
       #   shell: powershell
         
       #   run: New-Item -ItemType Directory -Path "demo/one/two/three/four"
-      - name: copy files to relative Path
-        shell: powershell
+      # - name: copy files to relative Path
+      #   shell: powershell
+      #   run: |
+
+      #      $sourceFolder = "$env:GITHUB_WORKSPACE\demo\one\two\*\four"
+
+      #      $destinationRoot = "$env:GITHUB_WORKSPACE\output"
+
+      #      Get-ChildItem -Path $sourceFolder -Filter *.txt -File | ForEach-Object {
+
+      #      $relativePath = Join-Path "three/four" $_.Name
+
+      #      $destinationFile = Join-Path $destinationRoot $relativePath
+
+      #      New-Item -ItemType Directory -Force -Path (Split-Path $destinationFile) | Out-Null
+
+      #      Copy-Item $_.FullName $destinationFile -Force
+
+      #      }
+      - name: print ls 
+        shell: bash
         run: |
-
-           $sourceFolder = "$env:GITHUB_WORKSPACE\demo\one\two\*\four"
-
-           $destinationRoot = "$env:GITHUB_WORKSPACE\output"
-
-           Get-ChildItem -Path $sourceFolder -Filter *.txt -File | ForEach-Object {
-
-           $relativePath = Join-Path "three/four" $_.Name
-
-           $destinationFile = Join-Path $destinationRoot $relativePath
-
-           New-Item -ItemType Directory -Force -Path (Split-Path $destinationFile) | Out-Null
-
-           Copy-Item $_.FullName $destinationFile -Force
-
-           }
+          ls 
+          echo this is testing
 
            
