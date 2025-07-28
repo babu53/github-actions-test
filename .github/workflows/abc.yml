@@ -73,7 +73,7 @@ jobs:
           # $sourceFolder = "$env:GITHUB_WORKSPACE\demo\one\two"
           # $destinationRoot = "$env:GITHUB_WORKSPACE\output"
 
-          # $files = Get-ChildItem -Path $sourceFolder -Filter *.ico -Recurse
+          # $files = Get-ChildItem -Path $sourceFolder -Filter *.txt -Recurse
                    
 
           # foreach ($file in $files) {
@@ -90,15 +90,15 @@ jobs:
           $sourceFolder = "$env:GITHUB_WORKSPACE\demo\one\two"
           $destinationRoot = "$env:GITHUB_WORKSPACE\output"
 
-          # Get all .ico files recursively
-          $files = Get-ChildItem -Path $sourceFolder -Filter *.ico -Recurse -File
+          # Get all .txt files recursively
+          $files = Get-ChildItem -Path $sourceFolder -Filter *.txt -Recurse -File
 
           foreach ($file in $files) {
           # Get parent and grandparent folder names
                $parent = Split-Path $file.DirectoryName -Leaf
                $grandparent = Split-Path (Split-Path $file.DirectoryName -Parent) -Leaf
 
-               # Build relative path: grandparent\parent\file.ico
+               # Build relative path: grandparent\parent\file.txt
                $relative = Join-Path $grandparent (Join-Path $parent $file.Name)
                $target = Join-Path $destinationRoot $relative
 
