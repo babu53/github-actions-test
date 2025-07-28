@@ -34,7 +34,6 @@ jobs:
           #mkdir demo
       - name: Create a folder using PowerShell
         shell: powershell
-        source = "${GITHUB_WORKSPACE}\demotest"
+        source = "${github.workspace}\demotest"
         run: New-Item -ItemType Directory -Path $source
-      
           
