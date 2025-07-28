@@ -41,7 +41,7 @@ jobs:
         run: |
 
            $sourceFile = "$env:GITHUB_WORKSPACE\demo\one\**\three\four\*.txt"
-           $relativePath = "three\four\one.txt"
+           $relativePath = "three\four\*.txt"
 
            $destinationRoot = "$env:GITHUB_WORKSPACE\output"
 
