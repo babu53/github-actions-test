@@ -40,8 +40,7 @@ jobs:
         shell: powershell
         run: |
 
-           $sourceFolder = "$env:GITHUB_WORKSPACE\demo\one\**\three\four"
-           # $relativePath = "three\four\*.txt"
+           $sourceFolder = "$env:GITHUB_WORKSPACE\demo\one\two\three\four"
 
            $destinationRoot = "$env:GITHUB_WORKSPACE\output"
 
