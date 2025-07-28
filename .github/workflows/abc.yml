@@ -40,14 +40,21 @@ jobs:
         shell: powershell
         run: |
 
-           $sourceFile = "$env:GITHUB_WORKSPACE\demo\one\**\three\four\*.txt"
-           $relativePath = "three\four\*.txt"
+           $sourceFolder = "$env:GITHUB_WORKSPACE\demo\one\**\three\four"
+           # $relativePath = "three\four\*.txt"
 
            $destinationRoot = "$env:GITHUB_WORKSPACE\output"
 
+           Get-ChildItem -Path $sourceFolder -Filter *.txt -File | ForEach-Object {
+
+           $relativePath = Join-Path "three/four" $_.Name
+
            $destinationFile = Join-Path $destinationRoot $relativePath
 
-           New-Item -ItemType Directory -Force -Path (Split-Path $destinationFile)
+           New-Item -ItemType Directory -Force -Path (Split-Path $destinationFile) | Out-Null
 
-           Copy-Item -Path $sourceFile -Destination $destinationFile -Force
-          
+           Copy-Item $_.FullName $destinationFile -Force
+
+           }
+
+           
