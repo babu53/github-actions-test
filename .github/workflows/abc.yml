@@ -40,7 +40,7 @@ jobs:
         shell: powershell
         run: |
 
-           $sourceFolder = "$env:GITHUB_WORKSPACE\demo\one\two\three\four"
+           $sourceFolder = "$env:GITHUB_WORKSPACE\demo\one\**\three\four"
 
            $destinationRoot = "$env:GITHUB_WORKSPACE\output"
 
