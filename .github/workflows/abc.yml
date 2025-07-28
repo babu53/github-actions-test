@@ -82,6 +82,8 @@ jobs:
              $relative = Join-Path $grandparent (Join-Path $parent $file.Name)
              $target = Join-Path $destinationRoot $relative
              $targetDir = Split-Path $target
-             if (!(Test-Path $targetDir)) {New-Item -ItemType Directory -Path $targetDir | Out-Null }
+             if (!(Test-Path $targetDir)) {
+               New-Item -ItemType Directory -Path $targetDir
+              }
              Copy-Item -Path $file.FullName - Destination $target -Force
             }
