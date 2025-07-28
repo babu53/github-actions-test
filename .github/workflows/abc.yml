@@ -34,6 +34,6 @@ jobs:
           #mkdir demo
       - name: Create a folder using PowerShell
         shell: powershell
-        source = "one\demotest"
-        run: New-Item -ItemType Directory -Path $source
+        
+        run: New-Item -ItemType Directory -Path "demo/one/two/three/four"
           
