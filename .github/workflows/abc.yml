@@ -62,10 +62,10 @@ jobs:
           echo this is testing
       - name: copy recursively
         run: |
-          cd "$GITHUB_WORKSPACE/demo/one/two"
+          cd "$env:GITHUB_WORKSPACE/demo/one/two"
           
 
-          DEST="$GITHUB_WORKSPACE/output"
+          DEST="$env:GITHUB_WORKSPACE/output"
 
           mkdir -p "$DEST"
 
