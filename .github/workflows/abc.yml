@@ -32,7 +32,7 @@ jobs:
         run: |
           ls
           #mkdir demo
-          
+
       - name: copy files to relative Path
         shell: powershell
         run: |
@@ -51,7 +51,7 @@ jobs:
 
            Copy-Item $_.FullName $destinationFile -Force
 
-      #      }
+           }
       # - name: print ls 
       #   #shell: bash
       #   run: |
