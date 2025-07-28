@@ -85,5 +85,5 @@ jobs:
              if (!(Test-Path $targetDir)) {
                New-Item -ItemType Directory -Path $targetDir
               }
-             Copy-Item -Path $file.FullName - Destination $target -Force
+             Copy-Item -Path $file.FullName -Destination $target -Force
             }
