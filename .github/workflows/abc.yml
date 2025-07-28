@@ -36,4 +36,19 @@ jobs:
       #   shell: powershell
         
       #   run: New-Item -ItemType Directory -Path "demo/one/two/three/four"
+      - name: copy files to relative Path
+        run: |
+
+           $sourceFile = "$env:GITHUB_WORKSPACE\demo\one\two\three\four\file.txt"
+           $relativePath = "three\four\file.txt"
+
+           $destinationRoot = "$env:GITHUB_WORKSPACE\output"
+
+           $destinationFile = Join-Path $destinationRoot $relativePath
+
+           New-Item -ItemType Directory -Force -Path (Split-Path $destinationFile)
+
+           Copy-Item -Path $sourceFile -Destination $destinationFile -Force
+
+        shell: pwsh
           
