@@ -68,7 +68,7 @@ jobs:
 
       #     find three/four -type f -name "*.txt" -exec cp --parents {} "$DEST" \;
       - name: copy files
-        sehll: powershell
+        shell: powershell
         run: |
           $sourceFolder = "$env:GITHUB_WORKSPACE\demo\one\two"
           $destinationRoot = "$env:GITHUB_WORKSPACE\output"
