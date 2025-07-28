@@ -33,25 +33,25 @@ jobs:
           ls
           #mkdir demo
 
-      - name: copy files to relative Path
-        shell: powershell
-        run: |
+      # - name: copy files to relative Path
+      #   shell: powershell
+      #   run: |
 
-           $sourceFolder = "$env:GITHUB_WORKSPACE\demo\one\two\*\four"
+      #      $sourceFolder = "$env:GITHUB_WORKSPACE\demo\one\two\*\four"
 
-           $destinationRoot = "$env:GITHUB_WORKSPACE\output"
+      #      $destinationRoot = "$env:GITHUB_WORKSPACE\output"
 
-           Get-ChildItem -Path $sourceFolder -Filter *.txt -File | ForEach-Object {
+      #      Get-ChildItem -Path $sourceFolder -Filter *.txt -File | ForEach-Object {
 
-           $relativePath = Join-Path "three/four" $_.Name
+      #      $relativePath = Join-Path "three/four" $_.Name
 
-           $destinationFile = Join-Path $destinationRoot $relativePath
+      #      $destinationFile = Join-Path $destinationRoot $relativePath
 
-           New-Item -ItemType Directory -Force -Path (Split-Path $destinationFile) | Out-Null
+      #      New-Item -ItemType Directory -Force -Path (Split-Path $destinationFile) | Out-Null
 
-           Copy-Item $_.FullName $destinationFile -Force
+      #      Copy-Item $_.FullName $destinationFile -Force
 
-           }
+      #      }
       # - name: print ls 
       #   #shell: bash
       #   run: |
