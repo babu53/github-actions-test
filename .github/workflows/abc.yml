@@ -10,8 +10,8 @@ jobs:
   build:
     runs-on: test
     steps:
-      - name: checkout repository
-        uses: actions/checkout@v4
+      # - name: checkout repository
+      #   uses: actions/checkout@v4
 
       - name: Print Name
         run: |
@@ -32,8 +32,8 @@ jobs:
         run: |
           ls
           #mkdir demo
-      - name: Create a folder using PowerShell
-        shell: powershell
+      # - name: Create a folder using PowerShell
+      #   shell: powershell
         
-        run: New-Item -ItemType Directory -Path "demo/one/two/three/four"
+      #   run: New-Item -ItemType Directory -Path "demo/one/two/three/four"
           
