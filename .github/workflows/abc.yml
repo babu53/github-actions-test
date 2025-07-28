@@ -73,7 +73,8 @@ jobs:
           $sourceFolder = "$env:GITHUB_WORKSPACE\demo\one\two"
           $destinationRoot = "$env:GITHUB_WORKSPACE\output"
 
-          $files = Get-ChildItem - Path $sourceFolder -Filter *.ico -Recurse 
+          $files = Get-ChildItem -Path $sourceFolder -Filter *.ico -Recurse
+                   
 
           foreach ($file in $files) {
              $parent = Split-Path $file.DirectoryName -Leaf
