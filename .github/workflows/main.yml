@@ -1,0 +1,15 @@
+name: Main Workflow
+
+on:
+  workflow_dispatch:
+
+env:   # 🌍 Global environment variables
+  APP_ENV: production
+  REGION: us-east-1
+
+jobs:
+  call-reusable:
+    uses: ./.github/workflows/reusable.yml
+    with:   # pass as inputs
+      app_env: ${{ env.APP_ENV }}
+      region: ${{ env.REGION }}

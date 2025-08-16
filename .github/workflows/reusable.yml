@@ -1,0 +1,20 @@
+name: Reusable Workflow
+
+on:
+  workflow_call:
+    inputs:
+      app_env:
+        required: true
+        type: string
+      region:
+        required: true
+        type: string
+
+jobs:
+  show-vars:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print envs
+        run: |
+          echo "App Env: ${{ inputs.app_env }}"
+          echo "Region: ${{ inputs.region }}"
